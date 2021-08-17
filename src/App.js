@@ -7,7 +7,8 @@ function App() {
   return (
     <div>
       <TodoNew />
-      {/* <TodoList title="Title from App" /> */}
+
+      <TodoList title="Title from App" />
     </div>
   );
 }

@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid"; // 1. import the UUID
 import "./TodoNew.css";
 
 const TodoNew = () => {
-  const [todoList, setTodoList] = useState([]);
+  const [todoLists, setTodoList] = useState([]);
   const [newTitle, setNewTitle] = useState("");
 
   const handleChange = (event) => {
@@ -19,7 +19,7 @@ const TodoNew = () => {
 
     setNewTitle("");
     setTodoList([
-      ...todoList,
+      ...todoLists,
       {
         id: uuidv4(),
         title: newTitle,
@@ -28,9 +28,11 @@ const TodoNew = () => {
   };
 
   const displayAllTodoList = () => {
-    return todoList.map((todoList) => {
+    return todoLists.map((todoList) => {
       return <TodoList title={todoList.title} />;
     });
+
+    // return <TodoList title={todoList.title} />;
   };
 
   return (
